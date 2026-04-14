@@ -1,3 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+@import "tailwindcss-primeui";
+@import "primeicons/primeicons.css";
+
+@theme {
+  --color-bg: #0f0f11;
+  --color-surface: #1c1c1e;
+  --color-accent: #d4af37;
+  --color-accent-soft: rgba(212, 175, 55, 0.1);
+  --color-text-main: #ffffff;
+  --color-text-dim: #8e8e93;
+  --color-error: #ff453a;
+  
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-main font-sans overflow-hidden h-screen w-screen;
+  }
+}
+
+.fake-cursor {
+  position: fixed;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translate(-2px, -2px);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}

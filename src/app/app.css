@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+
+:host ::ng-deep {
+  .p-button {
+    border-radius: 12px;
+  }
+  
+  .p-button.p-button-text {
+    color: var(--color-accent);
+  }
+}
