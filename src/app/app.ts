@@ -40,16 +40,16 @@ export class App implements AfterViewInit {
       setInterval(() => {
         if (!this.prankService.showDonationPopup() && !this.prankService.showPaymentPage() && Math.random() > 0.4) {
           this.prankService.showDiscount.set(true);
-          setTimeout(() => this.prankService.showDiscount.set(false), 5000);
+          setTimeout(() => this.prankService.showDiscount.set(false), 4000);
         }
-      }, 12000);
+      }, 15000);
 
-      // Shuffle menu every 15 seconds
+      // Shuffle menu
       setInterval(() => {
         if (!this.prankService.showPaymentPage()) {
           this.menuComponents.forEach(m => m.shuffle());
         }
-      }, 15000);
+      }, 4000);
     }
   }
 
@@ -77,7 +77,7 @@ export class App implements AfterViewInit {
     let dy = event.movementY;
 
     if (this.prankService.isForceFieldActive()) {
-      // Handle Teleportation for Checkout
+      // Handle Teleportation 
       const checkoutBtn = document.querySelector('.checkout-btn');
       if (checkoutBtn) {
         const rect = checkoutBtn.getBoundingClientRect();
@@ -86,13 +86,13 @@ export class App implements AfterViewInit {
         }
       }
 
-      // Handle Repulsion from registered repellables
+      // Handle Repulsion 
       for (const repellable of this.prankService.activeRepellables()) {
         const result = repellable.getRepulsion(dx, dy);
         if (result.repelled) {
           dx = result.dx;
           dy = result.dy;
-          break; // Stop after first repulsion to avoid double-flipping
+          break;
         }
       }
     }

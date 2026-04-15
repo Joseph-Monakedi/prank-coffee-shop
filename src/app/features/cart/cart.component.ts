@@ -7,7 +7,7 @@ import { ButtonModule } from 'primeng/button';
   standalone: true,
   imports: [ButtonModule],
   template: `
-    <div class="w-[350px] p-10 bg-black/20 border-l border-white/5 h-full">
+    <div class="w-87.5 p-10 bg-black/20 border-l border-white/5 h-full">
       <div class="bg-surface rounded-2xl h-full flex flex-col border border-white/10 overflow-hidden">
         <h3 class="p-5 m-0 text-base border-b border-white/5 font-semibold">Your Order</h3>
         

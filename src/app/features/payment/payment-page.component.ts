@@ -6,8 +6,8 @@ import { ButtonModule } from 'primeng/button';
   standalone: true,
   imports: [ButtonModule],
   template: `
-    <div class="fixed inset-0 bg-bg flex items-center justify-center z-[60000]">
-      <div class="bg-surface w-[450px] p-12 rounded-[30px] text-center border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
+    <div class="fixed inset-0 bg-bg flex items-center justify-center z-60000">
+      <div class="bg-surface w-112.5 p-12 rounded-[30px] text-center border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
         <div class="text-6xl mb-5">☕</div>
         <h2 class="text-2xl font-bold mb-2">Payment Successful</h2>
         <p class="text-text-dim text-sm mb-8">Your order is being prepared by our master baristas.</p>

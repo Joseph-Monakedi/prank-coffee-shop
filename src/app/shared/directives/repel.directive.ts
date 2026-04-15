@@ -11,7 +11,7 @@ export class RepelDirective implements Repellable, OnInit, OnDestroy {
   private cursorService = inject(CursorService);
   private prankService = inject(PrankService);
 
-  appRepel = input<number | string>(30);
+  appRepel = input<number | string>(15);
   shouldRepel = input<boolean | string>(false);
   force = input<number | string>(1);
   isMenuBtn = input<boolean | string>(false);
@@ -36,7 +36,7 @@ export class RepelDirective implements Repellable, OnInit, OnDestroy {
     }
 
     const rect = this.el.nativeElement.getBoundingClientRect();
-    const margin = typeof this.appRepel() === 'string' ? 40 : (this.appRepel() as number);
+    const margin = typeof this.appRepel() === 'string' ? 15 : (this.appRepel() as number);
     const forceValue = typeof this.force() === 'string' ? 1.8 : (this.force() as number);
 
     const x = this.cursorService.x();
@@ -52,8 +52,6 @@ export class RepelDirective implements Repellable, OnInit, OnDestroy {
       const dx = currentDx * -forceValue;
       let dy = currentDy * -forceValue;
       
-      // Add some jitter
-      dy += Math.sin(Date.now() / 80) * 4;
       
       return { dx, dy, repelled: true };
     }
